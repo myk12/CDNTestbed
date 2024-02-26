@@ -45,7 +45,7 @@ autoreconf -fi
 LDFLAGS="-Wl,-rpath,/usr/local/openssl/lib64" ./configure --with-openssl=/usr/local/openssl --with-nghttp2=/usr/local/nghttp2 --with-nghttp3=/usr/local/nghttp3 --with-ngtcp2=/usr/local/ngtcp2
 make -j32
 sudo make install
-sudo cp -r ./src/curl .libs /usr/local/bin
+sudo cp -r ./src/curl ./src/.libs /usr/local/bin
 cd $TOP_DIR
 
 # clean
