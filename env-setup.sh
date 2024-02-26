@@ -12,9 +12,8 @@ git config --global core.editor vim
 # Install Golang
 
 wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
-go version
-rm -rf go1.22.0*
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+sudo rm -rf go1.22.0*
 
 # Install IPFS kubo
 wget https://dist.ipfs.tech/kubo/v0.26.0/kubo_v0.26.0_linux-amd64.tar.gz
@@ -28,7 +27,7 @@ rm -rf kubo*
 
 ## go
 export PATH="$PATH:/usr/local/go/bin"
-echo "export PATH=\$PATH:/usr/local/go/bin/"  >> ~/.zshrc
+echo "export PATH=\$PATH:/usr/local/go/bin/"  >> ~/.bashrc
 go version
 
 ## ipfs
