@@ -46,3 +46,6 @@ LDFLAGS="-Wl,-rpath,/usr/local/openssl/lib64" ./configure --with-openssl=/usr/lo
 make -j32
 sudo make install
 cd $TOP_DIR
+
+# clean
+sudo rm -rf openssl nghttp2 nghttp3 ngtcp2 

@@ -15,8 +15,11 @@ make -j32
 sudo make install
 
 # set environment
-echo "PATH=\$PATH:/usr/local/nginx/sbin"
+echo "export PATH=\$PATH:/usr/local/nginx/sbin"
 
+# copy files 
+sudo cp ./key/server.* /usr/local/nginx/conf
+sudo cp ./nginx.conf /usr/local/nginx/conf
 
 # clean
 sudo rm -rf  nginx-1.25.1*
