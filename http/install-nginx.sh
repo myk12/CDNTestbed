@@ -13,6 +13,7 @@ cd nginx-1.25.1
     --without-http_rewrite_module
 make -j32
 sudo make install
+cd ..
 
 # set environment
 echo "export PATH=\$PATH:/usr/local/nginx/sbin"
