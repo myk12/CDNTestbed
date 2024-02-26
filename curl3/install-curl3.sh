@@ -1,7 +1,7 @@
 #!/bin/bash
 TOP_DIR=`pwd`
 
-sudo apt-get install -y autoconf libtool
+sudo apt-get install -y autoconf libtool pkg-config
 
 # compile openssl
 git clone --depth 1 -b openssl-3.0.10+quic https://github.com/quictls/openssl
@@ -42,9 +42,10 @@ cd $TOP_DIR
 git clone https://github.com/curl/curl
 cd curl
 autoreconf -fi
-LDFLAGS="-Wl,-rpath,/usr/local/openssl/lib64" ./configure --with-openssl=/usr/local/openssl --with-nghttp2=/usr/local/nghttp2 --with-nghttp3=/usr/local/nghttp3 --with-ngtcp2=/usr/local/ngtcp2 --prefix=/usr/local/curl
+LDFLAGS="-Wl,-rpath,/usr/local/openssl/lib64" ./configure --with-openssl=/usr/local/openssl --with-nghttp2=/usr/local/nghttp2 --with-nghttp3=/usr/local/nghttp3 --with-ngtcp2=/usr/local/ngtcp2
 make -j32
 sudo make install
+sudo cp -r ./src/curl .libs /usr/local/bin
 cd $TOP_DIR
 
 # clean
