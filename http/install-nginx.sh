@@ -16,7 +16,7 @@ sudo make install
 cd ..
 
 # set environment
-echo "export PATH=\$PATH:/usr/local/nginx/sbin"
+echo "export PATH=\$PATH:/usr/local/nginx/sbin" >> ~/.bashrc
 
 # copy files 
 sudo cp ./key/server.* /usr/local/nginx/conf

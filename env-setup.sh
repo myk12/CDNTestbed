@@ -36,3 +36,12 @@ ipfs init
 cp ./ipfs/swarm.key ~/.ipfs/
 
 rm -rf *tar*
+
+#### RUN HTTP SUB SCRIPT ####
+cd http
+./install-nginx.sh
+cd ..
+
+#### RUN CURL3 SUB SCRIPT ####
+cd curl3
+./install-curl3.sh
