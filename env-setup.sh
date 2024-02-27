@@ -45,3 +45,14 @@ cd ..
 #### RUN CURL3 SUB SCRIPT ####
 cd curl3
 ./install-curl3.sh
+
+#### GENERATE TEST FILES ####
+go run ./utils/file-generator.go --size=1KB
+go run ./utils/file-generator.go --size=10KB
+go run ./utils/file-generator.go --size=100KB
+go run ./utils/file-generator.go --size=1MB
+go run ./utils/file-generator.go --size=10MB
+go run ./utils/file-generator.go --size=100MB
+go run ./utils/file-generator.go --size=1GB
+go run ./utils/file-generator.go --size=10GB
+sudo mv *.dat /usr/local/nginx/html/
