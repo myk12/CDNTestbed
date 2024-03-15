@@ -2,13 +2,12 @@
 TOP_DIR=`pwd`
 
 sudo apt-get update 
-sudo apt-get install build-essential htop openssl -y
+sudo apt-get install build-essential htop openssl varnish -y
 
 # config git
 git config --global user.name "mayuke"
 git config --global user.email "ykma22@m.fudan.edu.cn"
 git config --global core.editor vim
-
 
 # Install Golang
 
@@ -56,6 +55,5 @@ go run ./utils/file-generator.go --size=1MB
 go run ./utils/file-generator.go --size=10MB
 go run ./utils/file-generator.go --size=100MB
 go run ./utils/file-generator.go --size=1GB
-go run ./utils/file-generator.go --size=10GB
 sudo mv *.dat /usr/local/nginx/html/
 
