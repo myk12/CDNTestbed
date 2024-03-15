@@ -51,8 +51,10 @@ fi
 
 # install varnish
 sudo apt-get install varnish -y
-sudo cp varnish /etc/default/varnish
 parent_name=${node_parents[${self_name}]}
 echo ">> set $self_name point to $parent_name"
 sed -i "s/\.host = \"[^\"]*\";/\.host = \"${node_map[$parent_name]}\";/g" default.vcl
+if [ $parent_name == "node-0" ]; then
+    sed -i "s/\.port = \"*\";/\.port = \"80\";/g" default.vcl
+fi
 sudo cp default.vcl /etc/varnish/default.vcl
