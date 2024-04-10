@@ -2,10 +2,6 @@
 # input trace
 trace_filename="/root/trace.dat"
 log_filename="/root/actions.log"
-# read each line of trace
-# remove the first lines
-sed '1,1d; $!N; P; D' "${trace_filename}" > temp_file.txt
-cat temp_file.txt > $trace_filename
 
 start_time=${ENV_START_TIME}
 server_address=${ENV_SERVER_ADDRESS}
@@ -42,21 +38,20 @@ while IFS="," read -r seq user_id abs_ts act_type object_name object_size liked 
 
     curr_time=$(date)
     # act
+    log_msg=""
     if [ "${act_type}" = "POST" ]; then
+        # generate content and post to source site
         log_msg="-[${curr_time}] POST ${object_name}"
-        echo $log_msg
-        echo $log_msg >> $log_filename
-        /root/post_content.sh $user_id $object
+        /root/post_content.sh ${user_id} ${object_name} ${object_size} &
     elif [ "${act_type}" = "GET" ]; then
+        # curl to get file
         object_url="${url_prefix}${object_name}"
         log_msg="-[${curr_time}] GET ${object_url}"
-        echo $log_msg
-        echo $log_msg >> $log_filename
-
         curl ${object_url} --head --output $log_filename &
     else
         log_msg="-[${curr_time}] Unknown action type"
-        echo $log_msg
-        echo $log_msg >> $log_filename
     fi
+
+    echo $log_msg
+    echo $log_msg >> $log_filename
 done < $trace_filename
