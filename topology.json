@@ -1,0 +1,31 @@
+{
+    "topology" : {
+        "layer-0" : {
+
+        },
+        "layer-1" : {
+
+        },
+        "layer-2" : [
+            {
+                "id" : "access-0",
+                "name" : "access-0",
+                "location" : [40.76, 111.84],
+                "domain_name" : "",
+                "IP_address" : ""
+            },
+            {
+                "id" : "access-1",
+                "name" : "access-1",
+                "location" : [43.07, 89.41],
+                "domain_name" : ""
+            },
+            {
+                "id" : "access-2",
+                "name" : "access-2",
+                "location" : [34.67, 82.84],
+                "domain_name" : ""
+            }
+        ]
+    }
+}
