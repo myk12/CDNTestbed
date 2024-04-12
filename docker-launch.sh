@@ -5,21 +5,21 @@
 ##
 ########################################################################
 #
-#   Usage: ./docker-launchsh current-project-path server-addr server-port
+#   Usage: ./docker-launchsh server-addr server-port
 #
 
 declare -A node_dir
-node_dir["node-3"]="aisa-node"
+node_dir["node-3"]="access-0"
 node_dir["node-4"]="europe-node"
 node_dir["node-5"]="america-node"
 node_dir["node-6"]="latin-node"
 
 # commandline arguement
 self_name=`hostname | awk -F '.' '{print $1}'`
-self_path="$1/dataset/${node_dir[${self_name}]}"
+self_path="./dataset/${node_dir[${self_name}]}"
 echo $self_path
-server_address=$2
-server_port=$3
+server_address=$1
+server_port=$2
 
 # time related variable
 
@@ -49,7 +49,7 @@ for trace in $traces; do
     sudo docker run \
             -v "${trace_file_path}:/root/trace.dat" \
             -e "ENV_START_TIME=${adjusted_timestamp}" \
-            -e "ENV_SERVER_ADDRESS=${server_addr}" \
+            -e "ENV_SERVER_ADDRESS=${server_address}" \
             -e "ENV_SERVER_PORT=${server_port}" \
             cdn-testbed &
 done
