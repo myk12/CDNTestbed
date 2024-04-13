@@ -13,7 +13,7 @@ echo "[post-content] user ${user_id} posting content ${content_name} to ${FTP_SE
 dd if=/dev/urandom of="${content_name}" bs=1 count="${content_size}" status=progress
 
 # use ftp to connect to ftp server and login
-ftp -n $FTP_SERVER <<EOF
+ftp -n $FTP_SERVER -P 7777 <<EOF
 user $FTP_USERNAME $FTP_PASSWORD
 put ${content_name}
 bye
