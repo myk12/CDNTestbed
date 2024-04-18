@@ -35,9 +35,9 @@ while IFS="," read -r seq user_id abs_ts act_type object_name object_size liked 
     echo "need to wait ${time_wait} seconds"
 
     # sleep for 
-    #sleep $time_wait
+    sleep $time_wait
     # only for test
-    sleep 7
+    #sleep 7
 
     curr_time=$(date)
     # act
