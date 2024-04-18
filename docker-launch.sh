@@ -5,7 +5,7 @@
 ##
 ########################################################################
 #
-#   Usage: ./docker-launchsh server-addr server-port
+#   Usage: ./docker-launchsh server-addr server-port source-site-address
 #
 
 declare -A node_dir
@@ -20,6 +20,7 @@ self_path="./dataset/${node_dir[${self_name}]}"
 echo $self_path
 server_address=$1
 server_port=$2
+source_address=$3
 
 # time related variable
 
@@ -51,5 +52,6 @@ for trace in $traces; do
             -e "ENV_START_TIME=${adjusted_timestamp}" \
             -e "ENV_SERVER_ADDRESS=${server_address}" \
             -e "ENV_SERVER_PORT=${server_port}" \
+	    -e "ENV_SOURCE_ADDRESS=${source_address}" \
             cdn-testbed &
 done

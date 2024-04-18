@@ -7,6 +7,7 @@ curl_log_filename="/root/curl.log"
 start_time=${ENV_START_TIME}
 server_address=${ENV_SERVER_ADDRESS}
 server_port=${ENV_SERVER_PORT}
+source_address=${ENV_SOURCE_ADDRESS}
 
 # generate URL
 url_prefix="http://${server_address}:${server_port}/"
@@ -44,7 +45,7 @@ while IFS="," read -r seq user_id abs_ts act_type object_name object_size liked 
     if [ "${act_type}" = "POST" ]; then
         # generate content and post to source site
         log_msg="-[${curr_time}] POST ${object_name}"
-        /root/post-content.sh ${user_id} ${object_name} ${object_size} ${server_address} &
+        /root/post-content.sh ${user_id} ${object_name} ${object_size} ${source_address} &
     elif [ "${act_type}" = "GET" ]; then
         # curl to get file
         object_url="${url_prefix}${object_name}"
