@@ -9,10 +9,10 @@
 #
 
 declare -A node_dir
-node_dir["node-3"]="access-0"
-node_dir["node-4"]="europe-node"
-node_dir["node-5"]="america-node"
-node_dir["node-6"]="latin-node"
+node_dir["node-3"]="Atlanta"
+node_dir["node-4"]="Los Angeles"
+node_dir["node-5"]="New York"
+node_dir["node-6"]="Seattle"
 
 # commandline arguement
 self_name=`hostname | awk -F '.' '{print $1}'`

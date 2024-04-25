@@ -35,14 +35,14 @@
             },
             {
                 "id" : "access-1",
-                "name" : "Los Angeles",
+                "name" : "LosAngeles",
                 "location" : [34.0522, 118.2437],
                 "domain_name" : "",
                 "ip_address" : ""
             },
             {
                 "id" : "access-2",
-                "name" : "New York",
+                "name" : "NewYork",
                 "location" : [40.7128, 74.0060],
                 "domain_name" : "",
                 "ip_address" : ""

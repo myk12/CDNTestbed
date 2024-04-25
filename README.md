@@ -12,12 +12,11 @@ Here is the topology we use.
 graph TD
     node-0 -->node-1
     node-0 -->node-2
-    node-1 -->node-3
-    node-1 -->node-4
-    node-2 -->node-5
-    node-2 -->node-6
+    node-1 -->node-3-Seattle
+    node-1 -->node-4-LosAngeles
+    node-2 -->node-5-NewYork
+    node-2 -->node-6-Atlanta
 ```
-
 
 This topology can be denoted by ths `topology.json`
 
