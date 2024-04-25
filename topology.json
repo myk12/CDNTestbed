@@ -28,29 +28,29 @@
         "layer-2" : [
             {
                 "id" : "access-0",
-                "name" : "access-0",
-                "location" : [40.76, 111.84],
+                "name" : "Seattle",
+                "location" : [47.6062, 122.3321],
                 "domain_name" : "",
                 "ip_address" : ""
             },
             {
                 "id" : "access-1",
-                "name" : "access-1",
-                "location" : [43.07, 89.41],
+                "name" : "Los Angeles",
+                "location" : [34.0522, 118.2437],
                 "domain_name" : "",
                 "ip_address" : ""
             },
             {
                 "id" : "access-2",
-                "name" : "access-2",
-                "location" : [34.67, 82.84],
+                "name" : "New York",
+                "location" : [40.7128, 74.0060],
                 "domain_name" : "",
                 "ip_address" : ""
             },
             {
                 "id" : "access-3",
-                "name" : "access-3",
-                "location" : [0, 0],
+                "name" : "Atlanta",
+                "location" : [33.7438, 84.3870],
                 "domain_name" : "",
                 "ip_address" : ""
             }
