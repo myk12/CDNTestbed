@@ -10,8 +10,8 @@
 
 declare -A node_dir
 node_dir["node-3"]="Atlanta"
-node_dir["node-4"]="Los Angeles"
-node_dir["node-5"]="New York"
+node_dir["node-4"]="LosAngeles"
+node_dir["node-5"]="NewYork"
 node_dir["node-6"]="Seattle"
 
 # commandline arguement
