@@ -13,4 +13,4 @@ cd ..
 # install docker
 cd container
 ./install-docker.sh
-sudo build -t cdn-testbed .
+sudo docker build -t cdn-testbed .
