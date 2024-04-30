@@ -121,3 +121,13 @@ MAIN.beresp_uncacheable            18346         0.03 Uncacheable backend respon
 6. `MAIN.beresp_uncacheable`：这个计数器记录了那些由后端服务器返回的响应被 Varnish 判断为不可缓存的次数。这可能是由于响应包含特定的头部，如 `Cache-Control: private`，指示响应不应被缓存。`18346` 表示有 18346 次这样的情况，`0.03` 表示这占总请求的百分比。
 
 这些统计数据对于监控和优化 Varnish 缓存的性能非常有用。它们可以帮助你了解缓存的效率以及可能需要调整缓存策略的地方。
+
+### Result
+
+![node3](result/varnishstat-node3.log.png)
+
+![node4](result/varnishstat-node4.log.png)
+
+![node5](result/varnishstat-node5.log.png)
+
+![node6](result/varnishstat-node6.log.png)
