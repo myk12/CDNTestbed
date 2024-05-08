@@ -1,6 +1,5 @@
 #!/bin/bash
 
-declare -A node_name
 node3_fullname="ssh gtc@c220g5-110506.wisc.cloudlab.us"
 node4_fullname="ssh gtc@c220g5-110528.wisc.cloudlab.us"
 node5_fullname="ssh gtc@amd021.utah.cloudlab.us"
