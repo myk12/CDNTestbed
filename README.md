@@ -123,11 +123,3 @@ MAIN.beresp_uncacheable            18346         0.03 Uncacheable backend respon
 这些统计数据对于监控和优化 Varnish 缓存的性能非常有用。它们可以帮助你了解缓存的效率以及可能需要调整缓存策略的地方。
 
 ### Result
-
-![node3](result/varnishstat-node3.log.png)
-
-![node4](result/varnishstat-node4.log.png)
-
-![node5](result/varnishstat-node5.log.png)
-
-![node6](result/varnishstat-node6.log.png)
