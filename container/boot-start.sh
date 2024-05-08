@@ -25,7 +25,7 @@ touch ${curl_log_filename}
 #
 ##################################
 
-while IFS="," read -r seq user_id abs_ts act_type object_name object_size liked offset_ts; do
+while IFS="," read -r seq user_id abs_ts act_type object_name object_size liked offset_ts level; do
     curr_ts=$(date +%s)
     echo "offset_ts = ${offset_ts}"
     target_ts=$((start_time + offset_ts))
@@ -42,13 +42,14 @@ while IFS="," read -r seq user_id abs_ts act_type object_name object_size liked 
     curr_time=$(date)
     # act
     log_msg=""
+    file_name=${level}"_"${object_name}
     if [ "${act_type}" = "POST" ]; then
         # generate content and post to source site
-        log_msg="-[${curr_time}] POST ${object_name}"
-        /root/post-content.sh ${user_id} ${object_name} ${object_size} ${source_address} &
+        log_msg="-[${curr_time}] POST ${file_name}"
+        /root/post-content.sh ${user_id} ${file_name} ${object_size} ${source_address} &
     elif [ "${act_type}" = "GET" ]; then
         # curl to get file
-        object_url="${url_prefix}${object_name}"
+        object_url="${url_prefix}${file_name}"
         log_msg="-[${curr_time}] GET ${object_url}"
         curl --output "/tmp/${object_name}" ${object_url} >> ${curl_log_filename} 2>&1  &
     else
