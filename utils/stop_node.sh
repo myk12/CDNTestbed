@@ -8,3 +8,6 @@ sudo systemctl restart varnish
 
 # clear varnish log
 sudo rm -rf /users/gtc/varnishstat.log
+
+# clear files
+sudo rm -rf /home/uftp/*.dat
